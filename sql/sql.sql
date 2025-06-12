@@ -3,6 +3,7 @@ use devbook;
 
 drop table if exists usuarios;
 drop table if exists seguidores;
+drop table if exists publicacoes;
 
 create table usuarios(
     id int auto_increment primary key;
@@ -25,4 +26,18 @@ CREATE TABLE seguidores (
     ON DELETE CASCADE,
 
     PRIMARY KEY (usuario_id, seguidor_id)
+) ENGINE=INNODB;
+
+CREATE TABLE publicacoes (
+    id int auto_increment primary key,
+    titulo varchar(100) not null,
+    conteudo (300) not null,
+
+    autor_id int not null,
+    FOREIGN KEY (autor_id)
+    REFERENCES usuarios(id)
+    ON DELETE CASCADE,
+
+    curtidas int default 0,
+    criadoEm timestamp default current_timestamp(),
 ) ENGINE=INNODB;
