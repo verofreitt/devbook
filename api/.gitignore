@@ -1,1 +1,31 @@
+.env# Binary files
+api
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Environment variables
 .env
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool
+*.out
+*.prof
+
+# IDE specific files
+.vscode/
+.idea/
+*.swp
+
+# OS specific files
+.DS_Store
+.DS_Store?
+Thumbs.db
+
+# Go specific
+vendor/
+go.work
